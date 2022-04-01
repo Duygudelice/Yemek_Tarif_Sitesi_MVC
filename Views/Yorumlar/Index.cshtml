@@ -1,0 +1,37 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Yorumlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>YORUM LİSTESİ</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KULLANICI ADI</th>
+        <th>MAİL</th>
+
+        <th>YEMEK İSMİ</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>ONAYLA</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+
+    <td>@x.ID</td>
+    <td>@x.AdSoyad</td>
+    <td>@x.Mail</td>
+    <td>@x.Yemek.Ad</td>
+    <td><a href="\Yorumlar\YorumSil\@x.ID" class="btn btn-danger">SİL</a></td>
+    <td><a href="\Yorumlar\YorumGetir\@x.ID" class="btn btn-warning">GÜNCELLE</a></td>
+    <td><a href="\Yorumlar\YorumOnayla\@x.ID" class="btn btn-primary">ONAYLA</a></td>
+
+
+</tr>
+    }
+
+</table>

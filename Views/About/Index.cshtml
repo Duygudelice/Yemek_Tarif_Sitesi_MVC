@@ -1,0 +1,78 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Hakkımızda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <link href="/webyemek/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='//fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <style>
+        .yazi {
+            color: #333;
+            font-size: 13px;
+            line-height: 1.8em;
+        }
+    </style>
+</head>
+<body>
+    <div  class="wrap">
+        <div class="total">
+   
+            <div class="main">
+                @foreach(var x in Model)
+                {
+
+
+                <div style="float:left;">
+                    <img style="width:96%; height:300px;" src="/webyemek/images/background.jpg" />
+                </div>
+                <div>
+                    <p class="yazi" >@x.yazi</p>
+                </div>
+
+                }
+
+                @*<div class="about-top">
+                    <div class="col span_1_of_about">
+                        <h3>About</h3>
+                        <div class="about-img">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="about-desc">
+                            @foreach (var x in Model)
+                            {
+                                <p>@x.yazi</p>
+                            }
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                   
+                    <div class="clear"></div>
+                </div>*@
+                
+              
+              
+              
+            </div>
+        </div>
+    </div>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Yorumlar>
+
+
+<h5 style="text-align:center;" class="post-author_head"><b>Yapılan Yorumlar</b></h5>
+@foreach (var x in Model)
+{
+    <ul class="comment-list">
+
+        <li>
+
+
+            <img src="/web/images/avatar.png" class="img-responsive" alt="">
+            <div class="desc">
+
+                <p>@x.AdSoyad : @x.Yorum </p>
+
+            </div>
+            <div class="clearfix"></div>
+
+
+        </li>
+
+    </ul>
+}
+
+        @*<div class="content-form">
+            <h3>Yorum Yapın</h3>
+
+            <form method="post">
+                <input placeholder="ID" name="Yemekid" required value="@ViewBag.deger" type="hidden" readonly="readonly" />
+                <input type="text" placeholder="İsim" name="AdSoyad" required />
+
+                <input type="text" placeholder="Mail" name="Mail" required />
+
+
+
+                <textarea placeholder="Yorumunuz" name="Yorum"></textarea>
+                <input type="submit" value="GÖNDER" />
+            </form>
+        </div>*@
+
+
+
+

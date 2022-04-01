@@ -1,0 +1,18 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Yemekler>
+
+
+
+
+<div class="recent">
+    <h3>Son Tarifler</h3>
+    <ul>
+        @foreach (var x in Model)
+        {
+            <li><a href="/Tarifler/TarifDetay/@x.ID">@x.Ad</a></li>
+        }
+    </ul>
+</div>
+
+
+

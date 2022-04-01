@@ -1,0 +1,35 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Mesajlar>
+@{
+    ViewBag.Title = "Mesajlar";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Mesajlar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD SOYAD</th>
+        <th>MAİL</th>
+        
+        <th>SİL</th>
+        <th>DETAYLAR</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+
+    <td>@x.ID</td>
+    <td>@x.AdSoyad</td>
+    <td>@x.Mail</td>
+ 
+
+    <td><a href="\Admin\MesajSil\@x.ID" class="btn btn-warning">SİL</a></td>
+
+    <td><a href="\Admin\MesajDetay\@x.ID" class="btn btn-default">DETAYLAR</a></td>
+
+</tr>
+    }
+
+</table>

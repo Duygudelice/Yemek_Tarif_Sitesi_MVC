@@ -1,0 +1,105 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+   
+    <link href="/webyemek/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='//fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <!--slider-->
+    <link rel="stylesheet" href="/webyemek/css/flexslider.css" type="text/css" media="all" />
+    <script src="/webyemek/js/modernizr.js"></script>
+    <!-- jQuery -->
+    <script src="/webyemek/js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+    <!-- FlexSlider -->
+    <script defer src="/webyemek/js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            SyntaxHighlighter.all();
+        });
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                start: function (slider) {
+                    $('body').removeClass('loading');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="total">
+            <div class="header">
+                <div class="header_top_right">
+                    <ul>
+                        <li><a href="/Giriş/Index2">Giriş Yap</a></li> |
+                        <li><a href="\Giriş\Cikis">Çıkış Yap</a></li> |
+                        <li><a href="/Giriş/Kayıtol">Kayıt Ol</a></li>
+                    </ul>
+                </div>
+
+                <div class="clear"></div>
+                <div class="header-bot">
+                    <div class="logo">
+                        <a href="/Default/Index"><img style="width:150%; height:100px; margin-left:80px; margin-top:-20px;"src="~/logo.png" alt="" /></a>
+                    </div>
+                    <ul class="follow_icon">
+                        <li><a href="#"><img src="/webyemek/images/fb.png" alt=""></a></li>
+                        <li><a href="#"><img src="/webyemek/images/googleplus.png" alt=""></a></li>
+                        <li><a href="#"><img src="/webyemek/images/tw.png" alt=""></a></li>
+                        <li><a href="#"><img src="/webyemek/images/pinterest.png" alt=""></a></li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                <div class="search-bar">
+                    @using (Html.BeginForm("Ara", "Arama", FormMethod.Get))
+                    {
+                        @Html.TextBox("k")
+                        <input name="searchsubmit" type="image" src="/webyemek/images/search-icon.png" value="Go" id="searchsubmit" class="btn">
+
+                    }
+                    @*<form action="/Arama/Ara" method="get">
+            <input type="text" class="textbox" name="Ad" value=" Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+            <input name="searchsubmit" type="image" src="/webyemek/images/search-icon.png" value="Go" id="searchsubmit" class="btn">
+
+        </form>*@
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="menu">
+                <div class="top-nav">
+                    <ul>
+                        <li ><a href="/Default/Index">Ana Sayfa</a></li>
+                        <li><a href="/About/Index">Hakkımızda</a></li>
+                        <li><a href="/DayFood/Index">Günün Yemeği</a></li>
+                        <li><a href="/Tarifler/Index">Tarifler</a></li>
+                        <li><a href="/Tarifver/Index">Tarif Ver</a></li>
+                        <li><a href="/Contact/Index">Iletişim</a></li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <div >
+        @RenderBody()
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p> © 2022 Tüm Hakları Saklıdır. | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

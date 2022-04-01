@@ -1,0 +1,45 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Tarifler>
+@{
+    ViewBag.Title = "GelenTarif";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Gelen Tarifler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>TARİF VEREN</th>
+        <th>MAİL</th>
+        <th>TARİF ADI</th>
+        <th>ONAY DURUMU</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>ONAYLA</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+
+
+    <td>@x.ID</td>
+
+    <td>@x.Tarifveren</td>
+    <td>@x.Mail</td>
+    <td>@x.Adı</td>
+
+    <td>@x.TarifOnay</td>
+
+
+
+
+    <td><a href="\Admin\GelenTarifSil\@x.ID" class="btn btn-warning">SİL</a></td>
+
+    <td><a href="\Admin\GelenTarifGetir\@x.ID" class="btn btn-danger">GÜNCELLE</a></td>
+    <td><a href="\Admin\GelenTarifOnayla\@x.ID" class="btn btn-primary">ONAYLA</a></td>
+</tr>
+    }
+
+</table>
+

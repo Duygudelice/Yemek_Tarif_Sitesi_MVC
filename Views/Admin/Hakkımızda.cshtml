@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Hakkımızda";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Hakkımızda Yazısı</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>YAZI</th>
+        <th>DETAYLAR</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.ID</td>
+            <td>@x.yazi</td>
+
+
+            <td><a href="\Admin\HakkımızdaGetir\@x.ID" class="btn btn-default">DETAYLAR</a></td>
+
+        </tr>
+    }
+
+</table>
+

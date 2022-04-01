@@ -1,0 +1,11 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Kategori>
+
+
+<select name="Kategoriid" id="pet-select">
+   
+    @foreach (var x in Model)
+    {
+        <option value="">@x.KategoriAd</option>
+    }
+</select>

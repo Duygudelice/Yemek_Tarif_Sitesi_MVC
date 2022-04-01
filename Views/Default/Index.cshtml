@@ -1,0 +1,80 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Yemekler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Free Spicy-Foods a Hotels and Restaurants Category Website Template  | Home :: w3layouts</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='//fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <!--slider-->
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
+    <script src="js/modernizr.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.min.js">\x3C/script>')</script>
+
+    <!-- FlexSlider -->
+    <script defer src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+    </script>
+</head>
+<body>
+  
+    <div class="wrap">
+        <div class="total">
+
+
+            <div class="banner">
+                <div class="flexslider">
+                    <ul class="slides">
+                        @foreach (var x in Model)
+                        {
+                        <li> <a href="/Tarifler/TarifDetay/@x.ID"><img style=" width:100%; height:600px;" src="@x.YemekResim" alt="" /></a></li>
+                        }
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="main">
+                @Html.Action("Partial1", "Default")
+                @Html.Action("Partial2", "Default")
+                @Html.Action("Partial3", "Default")
+                @Html.Action("Partial4", "Default")
+            </div>
+        </div>
+
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+
+            
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+

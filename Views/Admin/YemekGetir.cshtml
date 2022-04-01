@@ -1,0 +1,34 @@
+﻿@model YemekTarif.Models.sınıflar.Yemekler
+@{
+    ViewBag.Title = "YemekGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>YemekGetir</h2>
+
+@using (Html.BeginForm("YemekGuncelle", "Admin", FormMethod.Post))
+{
+
+
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.YemekMalzeme)
+    @Html.TextAreaFor(x => x.YemekMalzeme, new { @class = "form-control" })
+    <br />
+
+    <br />
+    @Html.LabelFor(x => x.Tarif)
+    @Html.TextAreaFor(x => x.Tarif, new { @class = "form-control", style = "height:300px; resize:vertical;" })
+    <br />
+    @Html.LabelFor(x => x.YemekResim)
+    @Html.TextBoxFor(x => x.YemekResim, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Kategoriid)
+    @Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })
+    <button class="btn btn-warning">Tarifi Güncelle</button>
+}
+

@@ -1,0 +1,33 @@
+﻿@model YemekTarif.Models.sınıflar.Tarifler
+@{
+    ViewBag.Title = "GelenTarifGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Gelen Tarif </h2>
+
+@using (Html.BeginForm("GelenTarifGüncelle", "Admin", FormMethod.Post))
+{
+
+
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Adı)
+    @Html.TextBoxFor(x => x.Adı, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TarifMalzeme)
+    @Html.TextAreaFor(x => x.TarifMalzeme, new { @class = "form-control" })
+    <br />
+
+    <br />
+    @Html.LabelFor(x => x.Tarifi)
+    @Html.TextAreaFor(x => x.Tarifi, new { @class = "form-control", style = "height:300px; resize:vertical;" })
+    <br />
+    @Html.LabelFor(x => x.TarifResim)
+    @Html.TextBoxFor(x => x.TarifResim, new { @class = "form-control" })
+
+    @Html.LabelFor(x => x.Kategoriid)
+    @Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })
+    <button class="btn btn-warning">Tarifi Güncelle</button>
+}

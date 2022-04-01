@@ -1,0 +1,33 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Üyeler>
+@{
+    ViewBag.Title = "Üyeler";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Üyeler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD SOYAD</th>
+        <th>MAİL</th>
+
+        <th>KULLANICI ADI</th>
+       
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+
+    <td>@x.ID</td>
+    <td>@x.AdSoyad</td>
+    <td>@x.Mail</td>
+    <td>@x.Kullanıcıadı</td>
+
+
+</tr>
+    }
+
+</table>
+

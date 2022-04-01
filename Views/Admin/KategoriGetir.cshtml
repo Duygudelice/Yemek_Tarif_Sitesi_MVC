@@ -1,0 +1,26 @@
+﻿@model YemekTarif.Models.sınıflar.Kategori
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>KategoriGetir</h2>
+
+@using (Html.BeginForm("KategoriGüncelle", "Admin", FormMethod.Post))
+{
+
+
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.KategoriAd)
+    @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+    <br />
+  
+
+    @Html.LabelFor(x => x.Adet)
+    @Html.TextBoxFor(x => x.Adet, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning">Güncelle</button>
+}
+

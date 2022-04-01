@@ -1,0 +1,34 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Yemekler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>YEMEK TARİFLERİ LİSTESİ</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>BAŞLIK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.ID</td>
+            <td>@x.Ad</td>
+            <td><a href="\Admin\YemekSil\@x.ID" class="btn btn-danger">SİLME</a></td>
+            <td><a href="\Admin\YemekGetir\@x.ID" class="btn btn-warning">GÜNCELLE</a></td>
+            <td><a href="\Tarifler\TarifDetay\@x.ID" class="btn btn-default">DETAYLAR</a></td>
+
+        </tr>
+    }
+
+</table>
+<a href="\Admin\YeniTarif" class="btn btn-primary">YENİ TARİF</a>
+
+

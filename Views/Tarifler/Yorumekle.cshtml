@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="content-form">
+    <h3>Yorum Yapın</h3>
+
+    <form  method="post">
+        <input placeholder="ID" name="Yemekid" required value="@ViewBag.deger" type="hidden" readonly="readonly" />
+        <input type="text" placeholder="İsim" name="AdSoyad" required />
+
+        <input type="text" placeholder="Mail" name="Mail" required />
+
+
+
+        <textarea placeholder="Yorumunuz" name="Yorum"></textarea>
+        <input type="submit"  name ="formyorum"value="GÖNDER" />
+    </form>
+</div>

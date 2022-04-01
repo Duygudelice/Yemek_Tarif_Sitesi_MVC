@@ -1,0 +1,23 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Yemekler>
+
+
+
+<div class="content-bottom">
+    @foreach (var x in Model)
+    {
+    <div class="col_1_of_3 span_1_of_3">
+        <a href="/Tarifler/TarifDetay/@x.ID">
+            <img style="width:440px; height:300px; " src="@x.YemekResim" alt="" /></a>
+            <div class="bottom-head"><h5>@x.Ad</h5></div>
+            <div class="but">
+                
+                    <button class="btn1 btn-8 btn-8a"><a href="/Tarifler/TarifDetay/@x.ID"><p style="color:white;">Daha Fazla Oku</p> </a></button>
+               
+              
+            </div>
+</div>
+    }
+
+    <div class="clear"></div>
+</div>

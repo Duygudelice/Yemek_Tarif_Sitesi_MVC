@@ -1,0 +1,40 @@
+﻿@using YemekTarif.Models.sınıflar
+@model  List<Kategori> 
+@{
+    ViewBag.Title = "Kategoriler";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Kategoriler</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KATEGORİ ADI</th>
+        <th>ADET</th>
+
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+
+            <td>@x.ID</td>
+
+            <td>@x.KategoriAd</td>
+
+            <td>@x.Adet</td>
+
+
+            <td><a href="\Admin\KategoriSil\@x.ID" class="btn btn-warning">SİL</a></td>
+
+            <td><a href="\Admin\KategoriGetir\@x.ID" class="btn btn-danger">GÜNCELLE</a></td>
+
+        </tr>
+    }
+
+</table>
+<a href="\Admin\YeniKategori" class="btn btn-primary">YENİ KATEGORİ</a>

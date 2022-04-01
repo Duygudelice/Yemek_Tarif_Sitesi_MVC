@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  
+    <link href="/webyemek/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href='//fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div class="wrap">
+        <div class="total">
+
+            <div class="main">
+                <div class="contact">
+                    <div class="col span_2_of_3">
+                        <div class="contact-form">
+                            <h3>Bizimle İletişime Geçin</h3>
+                           @using (Html.BeginForm("MesajGonder", "Contact", FormMethod.Post))
+                           {
+                            <form>
+                                <div>
+                                    <span><label>Ad-Soyad</label></span>
+                                    <span><input name="AdSoyad" type="text" placeholder="Adınız Soyadınız" class="textbox"></span>
+                                </div>
+                                <div>
+                                    <span><label>Mail</label></span>
+                                    <span><input name="Mail" type="text" placeholder="Mailiniz"  class="textbox"></span>
+                                </div>
+                                
+                                <div>
+                                    <span><label>Mesaj</label></span>
+                                    <span><textarea name="Mesaj" placeholder="Mesajınız" >  </textarea></span>
+                                </div>
+                                <div>
+                                    <button class="btn1 btn-8 btn-8a">Gönder</button>
+                                </div>
+                            </form>
+                           }
+                        </div>
+                    </div>
+                    <div class="col span_1_of_3">
+
+                        <div class="company_address">
+                            <h3>Adresimiz</h3>
+
+                            <p>Phone:(00) 222 666 444</p>
+                            <p>Fax: (000) 000 00 00 0</p>
+                            <p>Email: <span><a href="mailto:info@example.com">mail@example.com</a></span></p>
+                            <p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

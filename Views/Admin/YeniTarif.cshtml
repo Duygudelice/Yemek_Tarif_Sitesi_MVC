@@ -1,0 +1,28 @@
+﻿@model YemekTarif.Models.sınıflar.Yemekler
+@{
+    ViewBag.Title = "YeniTarif";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Yeni Tarif</h2>
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Ad)
+    @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.YemekMalzeme)
+    @Html.TextAreaFor(x => x.YemekMalzeme, new { @class = "form-control", style = "height:300px;" })
+    <br />
+
+    @Html.LabelFor(x => x.Tarif)
+    @Html.TextAreaFor(x => x.Tarif, new { @class = "form-control", style = "height:300px;" })
+    <br />
+
+    @Html.LabelFor(x => x.YemekResim)
+    @Html.TextBoxFor(x => x.YemekResim, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Kategoriid)
+    @Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Tarifi Ekle</button>
+    </form>

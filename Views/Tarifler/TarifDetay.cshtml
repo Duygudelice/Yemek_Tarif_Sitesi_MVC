@@ -1,0 +1,183 @@
+﻿@using YemekTarif.Models.sınıflar
+@model List<Yemekler> 
+@{
+    ViewBag.Title = "TarifDetay";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="/web/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/web/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <!--/script-->
+    <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+				});
+			});
+    </script>
+    <!---->
+    <style>
+    .rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
+
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 3vw;
+    color: #FFD600;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+
+
+h4,
+p {
+    text-align: center
+}
+
+h4 {
+    margin-top: 150px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="total">
+            <div class="single">
+                <div class="container">
+                    <div class="col-md-8 single-main">
+                        <div class="single-grid">
+
+                            @foreach (var x in Model)
+                            {
+                                <img src="@x.YemekResim" alt="" />
+                                <br />
+                                <br />
+                                <h3><b>Yemek Malzeme:</b></h3>
+                                <br />
+                                <p>
+                                    @x.YemekMalzeme
+                                </p>
+                                <br />
+                                <h3><b>Yemek Tarifi:</b></h3>
+                                <br />
+                                <p>
+                                    @x.Tarif
+                                </p>
+                                <br />
+                                <p>
+                                    <b>Puan</b><i>/Tarih:</i><b>@x.Puan</b>  /<i>@x.Tarih</i>
+                                    @*<h4>Puanlayın:</h4>
+
+
+        <form method="post">
+            <div class="rating">
+
+                <input type="radio" name="Puan" value="5" id="5"><label for="5">☆</label>
+                <input type="radio" name="Puan" value="4" id="4"><label for="4">☆</label>
+                <input type="radio" name="Puan" value="3" id="3"><label for="3">☆</label>
+                <input type="radio" name="Puan" value="2" id="2"><label for="2">☆</label>
+                <input type="radio" name="Puan" value="1" id="1"><label for="1">☆</label>
+
+            </div>
+            <button class="btn1 btn-8 btn-8a">Tarif Ver</button>
+        </form>*@
+                                    @*@Html.Action("Puanlama", "Tarifler")*@
+                                    <h4><b>Değerlendirin:</b></h4>
+                                    <div style="margin-left:250px;">
+                                        <table align="center">
+
+                                            <td><a href="\Tarifler\Puanlama2\@x.ID" class="btn btn-danger">Beğendim</a></td>
+
+
+
+
+                                            <td style="margin-left:20px;"><a href="\Tarifler\Puanlama3\@x.ID" class="btn btn-danger">Beğenmedim</a></td>
+                                        </table>
+                                    </div>
+                                </p>
+                            }
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        @Html.Action("Partial1", "Tarifler")
+                        @Html.Action("Yorumekle", "Tarifler")
+
+                    </div>
+
+                    <div class="col-md-4 side-content">
+                        @Html.Action("Partial2", "Tarifler")
+
+
+                        @Html.Action("Partial3", "Tarifler")
+
+
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---->
+
+    <div class="clear"></div>
+    </div>
+</body>

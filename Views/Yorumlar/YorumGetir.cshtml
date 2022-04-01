@@ -1,0 +1,35 @@
+﻿@model YemekTarif.Models.sınıflar.Yorumlar
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>YorumGetir</h2>
+
+@using (Html.BeginForm("YorumGüncelle", "Yorumlar", FormMethod.Post))
+{
+
+
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.AdSoyad)
+    @Html.TextBoxFor(x => x.AdSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+
+    <br />
+    @Html.LabelFor(x => x.Yorum)
+    @Html.TextAreaFor(x => x.Yorum, new { @class = "form-control", style = "height:300px; resize:vertical;" })
+    <br />
+    @Html.LabelFor(x => x.YorumOnay, new { @class = "form-control", })
+    @Html.TextBoxFor(x => x.YorumOnay, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Yemek.Ad, new { @class = "form-control", })
+    @Html.TextBoxFor(x => x.Yemek.Ad, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+
+    <button class="btn btn-warning">Yorumu Güncelle</button>
+}
